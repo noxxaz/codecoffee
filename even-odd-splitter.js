@@ -1,6 +1,6 @@
 const evenOddSplitter = (arr) => {
   // returns a tuple containing 2 arrays, 
-  // one with all even numbers from arr and one with all odds
+  // one with all elements of an array with even indexes and one with all the odds
    
     // initialize output arrays
     const evenArray = [];
