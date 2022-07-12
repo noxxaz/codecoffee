@@ -7,8 +7,7 @@ const christmasTree = (str, size) => {
 
   // validate inputs
   if (str.length > 1 || str.length < 1) return "";
-  if (size === NaN) return "";
-
+  if (typeof(size) !== "number") return "";
 
   console.log("inputs: " + str + ", " + size);
 
@@ -31,4 +30,4 @@ const christmasTree = (str, size) => {
   return outputStr;
 };
 
-console.log(christmasTree('#', 4));
+console.log(christmasTree('*', 20));
