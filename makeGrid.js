@@ -23,11 +23,6 @@
       for (let j = 0; j < n; j++) {
         outerArray[i].push(value);
       }
-    // // populate new 2-dimensional array with value
-    // for (const array in outerArray) {
-    //   for (const element in innerArray) {
-    //     element = 'R';
-    //   }
      }
   
     return outerArray;
