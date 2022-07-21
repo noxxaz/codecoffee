@@ -22,7 +22,23 @@
  *  B, C, and E appear as values in the original object.
  *---------------------------------------------------------------------------*/
 const saveKeysThatAreValues = (obj) => {
-  
+
+  // possible solution 1:
+  // declare return object
+  // loop through all keys in obj
+    // for each key, loop through all keys again
+      // compare inner loop value to outer loop key
+      // if a match is found, write key/value to new object
+  // return object
+
+  // possible solution 2:
+  // make 2 arrays, 1 of keys, one of values
+  // filter array 1 so that only elements also in array 2 remain
+    // loop through array 1
+      // make a new object
+      // add each element as a key 
+      // set the value to the value of obj.key
+      
 };
 
 
