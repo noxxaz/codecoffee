@@ -1,7 +1,7 @@
 /*-----------------------------------------------------------------------------
  *  "Code Coffee" coding challenge
  *  Challenge:  SAVE KEYS THAT ARE VALUES
- *  Solution Date: 2022/07/21
+ *  Solution Date: 2022/07/21 Code: 400C2233
  *  Zach Brown, Code Chrysalis Immersive (CC27)
  *  
  *  Write a function called saveKeysThatAreValues that takes in an object whose 
@@ -23,27 +23,27 @@
  *---------------------------------------------------------------------------*/
 const saveKeysThatAreValues = (obj) => {
 
-  // possible solution 1:
-  // declare return object
-  // loop through all keys in obj
-    // for each key, loop through all keys again
-      // compare inner loop value to outer loop key
-      // if a match is found, write key/value to new object
-  // return object
+  const returnObj = {};
 
-  // possible solution 2:
-  // make 2 arrays, 1 of keys, one of values
-  // filter array 1 so that only elements also in array 2 remain
-    // loop through array 1
-      // make a new object
-      // add each element as a key 
-      // set the value to the value of obj.key
+  // iterate through all keys
+  for (const outerKey of Object.keys(obj)) {
+    // iterate through all values
+    for (const innerKey in obj) {
+      if (outerKey === obj[innerKey]) {
+        returnObj[outerKey] = obj[outerKey];
+      }
+    }
+  }
+  // return object
+  return returnObj;
       
 };
 
 
 //--- TEST CASES --------------------------------------------------------------
-// {"A":"X","B":"Z","C":"Q","D":"C","E":"E","F":"B"}
+ const obj = {"A":"X","B":"Z","C":"Q","D":"C","E":"E","F":"B"};
+ console.log(saveKeysThatAreValues(obj));
+
 // {"5":"5"}
 // {}
 // {"5":"4"}
