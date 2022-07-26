@@ -1,7 +1,7 @@
 /*-----------------------------------------------------------------------------
  *  "Code Coffee" coding challenge
  *  Challenge:  REVERSE CLUMPS
- *  Solution Date: 2022/07/26 Code: 
+ *  Solution Date: 2022/07/26 Code: 0D3A44BE
  *  Zach Brown, Code Chrysalis Immersive (CC27)
  *  
  * Write a function called reverseClumps that takes in an array arr and 
@@ -13,6 +13,35 @@
  * The number of elements in the input array will always be a multiple of n.
  *---------------------------------------------------------------------------*/
 const reverseClumps = (arr, n) => {
+
+  const arrOutput = [];
+  const arrStack = [];
+  let itemCounter = 0;
+  
+  //loop through all items in arr
+  for(let i = 0; i < arr.length; i++) {
+    itemCounter++;
+    arrStack.push(arr[i]);
+    // when counter reaches n, push items from the stack into the output array
+    if (itemCounter === n) {
+      for(let j = arrStack.length; j > 0; j--) {
+        arrOutput.push(arrStack.pop());
+      }
+      itemCounter = 0;
+    }
+  }
+  return arrOutput;
+
+
+
+
+  // for each item in array
+  // increment a counter
+  // add item to stack array
+  // if counter = n
+  //   loop backwards through stack and write to output array
+  
+
 
 };
 
