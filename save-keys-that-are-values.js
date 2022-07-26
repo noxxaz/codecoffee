@@ -24,27 +24,28 @@
 const saveKeysThatAreValues = (obj) => {
 
   const returnObj = {};
-
-  // iterate through all keys
-  for (const outerKey of Object.keys(obj)) {
-    // iterate through all values
-    for (const innerKey in obj) {
-      if (outerKey === obj[innerKey]) {
-        returnObj[outerKey] = obj[outerKey];
-      }
-    }
+  const arrKeys = Object.keys(obj);
+  const arrValues = Object.values(obj);
+  const filteredKeys = arrKeys.filter((key) => arrValues.includes(key))
+  for (const key of filteredKeys) {
+    returnObj[key] = obj[key];
   }
-  // return object
   return returnObj;
-      
 };
 
 
 //--- TEST CASES --------------------------------------------------------------
- const obj = {"A":"X","B":"Z","C":"Q","D":"C","E":"E","F":"B"};
- console.log(saveKeysThatAreValues(obj));
+let obj = {"A":"X","B":"Z","C":"Q","D":"C","E":"E","F":"B"};
+console.log(saveKeysThatAreValues(obj));
 
-// {"5":"5"}
-// {}
-// {"5":"4"}
-// {"aaa":"bbb","bbb":"aaa"}
+obj = {"5":"5"};
+console.log(saveKeysThatAreValues(obj));
+
+obj = {};
+console.log(saveKeysThatAreValues(obj));
+
+obj = {"5":"4"}
+console.log(saveKeysThatAreValues(obj));
+
+obj = {"aaa":"bbb","bbb":"aaa"};
+console.log(saveKeysThatAreValues(obj));
