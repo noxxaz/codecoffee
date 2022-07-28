@@ -10,15 +10,12 @@
  *---------------------------------------------------------------------------*/
   const inverseObjectFilter = (obj, valueExclusionList) => {
     const newObj = {};
-
     // loop through input object values
-    const values = Object.values(obj);
-    const keys = Object.keys(obj);
-    for (let i = 0; i < values.length; i++) {
+    for (const item in obj) {
       // if value is not in exclusion list
-      if (!valueExclusionList.includes(values[i])) 
+      if (!valueExclusionList.includes(obj[item]))
         // write key/value pair to new object
-        newObj[keys[i]] = values[i];
+        newObj[item] = obj[item];
     }
     return newObj;
   };
