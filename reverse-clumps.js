@@ -15,13 +15,13 @@
 const reverseClumps = (arr, n) => {
 
   const arrOutput = [];
-  const arrStack = [];
+  const arrStack = new Array(n);
   let itemCounter = 0;
   
   //loop through all items in arr
   for(let i = 0; i < arr.length; i++) {
+    arrStack[itemCounter] = arr[i];
     itemCounter++;
-    arrStack.push(arr[i]);
     // when counter reaches n, push items from the stack into the output array
     if (itemCounter === n) {
       for(let j = arrStack.length; j > 0; j--) {
@@ -31,17 +31,6 @@ const reverseClumps = (arr, n) => {
     }
   }
   return arrOutput;
-
-
-
-
-  // for each item in array
-  // increment a counter
-  // add item to stack array
-  // if counter = n
-  //   loop backwards through stack and write to output array
-  
-
 
 };
 
